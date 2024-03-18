@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Dezimal-Binär Umrechner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Dezimal-Binär Umrechner</h1>
+    <div id="converter">
+        <div>
+            <label for="decimalInput">Dezimal:</label>
+            <input type="number" id="decimalInput" placeholder="Gib eine Dezimalzahl ein">
+        </div>
+        <div>
+            <label for="binaryInput">Binär:</label>
+            <input type="text" id="binaryInput" placeholder="Gib eine Binärzahl ein">
+        </div>
+        <button onclick="convertDecimalToBinary()">Dezimal zu Binär</button>
+        <button onclick="convertBinaryToDecimal()">Binär zu Dezimal</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+#converter {
+    margin-top: 20px;
+}
+
+input, button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    cursor: pointer;
+}
+
+// script.js
+function convertDecimalToBinary() {
+    const decimalInput = document.getElementById('decimalInput').value;
+    const binaryOutput = parseInt(decimalInput, 10).toString(2);
+    document.getElementById('binaryInput').value = binaryOutput;
+}
+
+function convertBinaryToDecimal() {
+    const binaryInput = document.getElementById('binaryInput').value;
+    const decimalOutput = parseInt(binaryInput, 2).toString(10);
+    document.getElementById('decimalInput').value = decimalOutput;
+}
